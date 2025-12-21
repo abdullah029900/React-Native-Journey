@@ -1,45 +1,35 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import {View,Text,Button,Alert} from 'react-native'
+import{SafeAreaView}from 'react-native-safe-area-context'
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+  function handlepress(){
+Alert.alert('Simple button is pressed not more than that')
+  }
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+function App(){
+return (
+  <SafeAreaView>
+  <View>
+    <Text>Hello WOrld </Text>
+    <Text>Hello WOrld </Text>
+    <Text>Hello WOrld </Text>
 
-  return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
+<Button
+title='Second Button'
+onPress={handlepress}
+color="#22be5bff"
+
+/>
+    <Button
+    title='Press me '
+onPress={handlepress} 
+color="#c42727ff"
+/>
+  </View>
+  
+</SafeAreaView>
+
+)
 }
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
